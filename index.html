@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat UI Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="chat-header-content">
+                <div class="avatar avatar-bot">🤖</div>
+                <div class="header-info">
+                    <h2>ChatBot</h2>
+                    <p class="status">Online</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="clearBtn" class="btn-icon" title="Clear Chat">🗑️</button>
+                <button id="infoBtn" class="btn-icon" title="Info">ℹ️</button>
+            </div>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <div class="chat-messages" id="chatBox">
+            <div class="message-group bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <div class="message bot">
+                        <p>Hello! 👋 I'm ChatBot. How can I help you today?</p>
+                    </div>
+                    <span class="message-time">just now</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-area">
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    class="message-input" 
+                    placeholder="Type your message here..."
+                    autocomplete="off"
+                >
+                <button id="sendBtn" class="send-btn" title="Send message">
+                    <span>Send</span>
+                    <span class="send-icon">➤</span>
+                </button>
+            </div>
+            <div class="quick-replies">
+                <button class="quick-reply-btn" onclick="sendQuickReply('Hello!')">Hello!</button>
+                <button class="quick-reply-btn" onclick="sendQuickReply('How are you?')">How are you?</button>
+                <button class="quick-reply-btn" onclick="sendQuickReply('Tell me a joke')">Tell me a joke</button>
+                <button class="quick-reply-btn" onclick="sendQuickReply('Help me')">Help me</button>
+            </div>
+        </div>
+
+        <!-- Typing Indicator (hidden by default) -->
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div class="info-modal" id="infoModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeInfo()">&times;</button>
+            <h3>About This Chat</h3>
+            <p><strong>ChatBot Simulator</strong> is an interactive chat interface that simulates conversations.</p>
+            <ul>
+                <li>✨ Send messages and get instant replies</li>
+                <li>💾 Chat history is saved automatically</li>
+                <li>🔄 Clear chat history anytime</li>
+                <li>⚡ Quick reply buttons for convenience</li>
+                <li>📱 Fully responsive design</li>
+            </ul>
+            <p><em>All conversations are stored locally in your browser.</em></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
